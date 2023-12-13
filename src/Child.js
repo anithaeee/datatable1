@@ -1,9 +1,17 @@
 import React from 'react'
 import { useState } from 'react';
-import {DataTable} from 'primereact/datatable'
+import {DataTable} from 'primereact/datatable';
+import { Column } from 'primereact/column';
 const Child = (props) => {
+    const[name,setname] = useState("");
   return (
-    <div>Child</div>
+    <div>
+       <DataTable value={props.griddata}>
+        <Column field='name' header='Name'></Column>
+        <Column field='Age' header='Age'></Column>
+        <Column field='Place' header='Place'></Column>
+       </DataTable>
+    </div>
   )
 }
 
