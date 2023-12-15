@@ -3,7 +3,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Child from './Child';
 import { ProductService } from './ProductService';
-function App(props) {
+function App() {
   const[name,setname]= useState("");
    const[data,setdata]= useState([]);
    useEffect(()=>{

@@ -6,12 +6,9 @@ import { ProductService } from './ProductService';
 const Child = (props) => {
     const[name,setname] = useState("");
     const[data, setdata] = useState([]);
-    useEffect(()=>{
-        ProductService.getProducts().then(data=>setdata(data));
-    });
   return (
     <div>
-       <DataTable value={data}>
+       <DataTable value={props.ProductService} paginator rows={5} rowsPerPageOptions={[5,10,15,20,25]}>
         <Column field='id' header='id'></Column>
         <Column field='code' header='code'></Column>
         <Column field='name' header='name'></Column>
